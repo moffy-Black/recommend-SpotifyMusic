@@ -3,6 +3,6 @@
 ### requirements
 
 ```
-cd ~/Moffy music
-pod install
+$ cd ~/graduation-iOS
+$ pod install
 ```
