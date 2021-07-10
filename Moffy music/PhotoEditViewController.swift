@@ -10,10 +10,11 @@ import UIKit
 class PhotoEditViewController: UIViewController {
     var sat = ""
     var bri = ""
-    let imageList: [Int] = []
+    var gray2Img: UIImage!
     
     @IBOutlet weak var satLabel: UILabel!
     @IBOutlet weak var briLabel: UILabel!
+    @IBOutlet weak var grayImg: UIImageView!
     
 
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class PhotoEditViewController: UIViewController {
         // Do any additional setup after loading the view.
         satLabel.text = self.sat
         briLabel.text = self.bri
+        grayImg.image = self.gray2Img
     }
     
 

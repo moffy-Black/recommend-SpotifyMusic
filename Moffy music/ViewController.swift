@@ -23,6 +23,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var imagePickerController = UIImagePickerController()
     var averageColor: UIColor!
     
+    var grayImg: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,6 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let briString = bri.description
             nextView.sat = satString
             nextView.bri = briString
+            nextView.gray2Img = grayImg
         }
     }
     
@@ -85,6 +88,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             photoPreview?.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         }
         guard let img = photoPreview.image else {return}
+        
+        grayImg = OpenCV2.rgb2gray(img)
+        
         let averageColor = UIColor(averageColorFrom: img)
         averageColor.getHue(&hue, saturation: &sat, brightness: &bri, alpha: &alp)
         picker.dismiss(animated: true, completion: nil)
