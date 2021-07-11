@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		E7204DE82699875D003A4562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7204DE62699875D003A4562 /* Main.storyboard */; };
 		E7204DEA2699875E003A4562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7204DE92699875E003A4562 /* Assets.xcassets */; };
 		E7204DED2699875E003A4562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7204DEB2699875E003A4562 /* LaunchScreen.storyboard */; };
+		E7204DF7269997BF003A4562 /* PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */; };
+		E7204DFB26999CB0003A4562 /* OpenCV2.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7204DFA26999CB0003A4562 /* OpenCV2.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		E7204DE92699875E003A4562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7204DEC2699875E003A4562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7204DEE2699875E003A4562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewController.swift; sourceTree = "<group>"; };
+		E7204DF826999CB0003A4562 /* Moffy music-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moffy music-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7204DF926999CB0003A4562 /* OpenCV2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCV2.h; sourceTree = "<group>"; };
+		E7204DFA26999CB0003A4562 /* OpenCV2.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCV2.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,6 @@
 				3D297C8E2331449797CE20A9 /* Pods-Moffy music.debug.xcconfig */,
 				C7946214089E65FD052EA2C7 /* Pods-Moffy music.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,10 +89,14 @@
 				E7204DE02699875D003A4562 /* AppDelegate.swift */,
 				E7204DE22699875D003A4562 /* SceneDelegate.swift */,
 				E7204DE42699875D003A4562 /* ViewController.swift */,
+				E7204DF926999CB0003A4562 /* OpenCV2.h */,
+				E7204DFA26999CB0003A4562 /* OpenCV2.mm */,
 				E7204DE62699875D003A4562 /* Main.storyboard */,
+				E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */,
 				E7204DE92699875E003A4562 /* Assets.xcassets */,
 				E7204DEB2699875E003A4562 /* LaunchScreen.storyboard */,
 				E7204DEE2699875E003A4562 /* Info.plist */,
+				E7204DF826999CB0003A4562 /* Moffy music-Bridging-Header.h */,
 			);
 			path = "Moffy music";
 			sourceTree = "<group>";
@@ -125,6 +134,7 @@
 				TargetAttributes = {
 					E7204DDC2699875D003A4562 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -206,9 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7204DFB26999CB0003A4562 /* OpenCV2.mm in Sources */,
 				E7204DE52699875D003A4562 /* ViewController.swift in Sources */,
 				E7204DE12699875D003A4562 /* AppDelegate.swift in Sources */,
 				E7204DE32699875D003A4562 /* SceneDelegate.swift in Sources */,
+				E7204DF7269997BF003A4562 /* PhotoEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84A763S5U4;
 				INFOPLIST_FILE = "Moffy music/Info.plist";
@@ -365,6 +378,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy music-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -376,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84A763S5U4;
 				INFOPLIST_FILE = "Moffy music/Info.plist";
@@ -385,6 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy music-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
