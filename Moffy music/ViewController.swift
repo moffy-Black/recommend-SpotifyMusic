@@ -8,13 +8,16 @@
 import UIKit
 import Photos
 import ChameleonFramework
+import Foundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    // UIView connected values
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var photoPreview: UIImageView!
     @IBOutlet weak var photoLibraryButton: UIButton!
     
+    // hsba values
     var hue : CGFloat = 0.1
     var sat : CGFloat = 0.1
     var bri : CGFloat = 0.1
@@ -22,7 +25,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var imagePickerController = UIImagePickerController()
     var averageColor: UIColor!
-    
     var grayImg: UIImage!
     
     override func viewDidLoad() {
@@ -78,6 +80,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    func getPixels(image: UIImage) {
+        guard let cgImage = image.cgImage,
+            let data = cgImage.dataProvider?.data,
+            let bytes = CFDataGetBytePtr(data) else {
+            fatalError("Couldn't access image data")
+        }
+        assert(cgImage.colorSpace?.model == .rgb)
+
+        let bytesPerPixel = cgImage.bitsPerPixel / cgImage.bitsPerComponent
+        for y in 0 ..< cgImage.height {
+            for x in 0 ..< cgImage.width {
+                let offset = (y * cgImage.bytesPerRow) + (x * bytesPerPixel)
+                let components = (r: bytes[offset], g: bytes[offset + 1], b: bytes[offset + 2])
+//                print("[x:\(x), y:\(y)] \(components)")
+            }
+//            print("---")
+        }
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -89,10 +109,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         guard let img = photoPreview.image else {return}
         
+        getPixels(image: img)
+        
         grayImg = OpenCV2.rgb2gray(img)
         
         let averageColor = UIColor(averageColorFrom: img)
         averageColor.getHue(&hue, saturation: &sat, brightness: &bri, alpha: &alp)
+        
         picker.dismiss(animated: true, completion: nil)
     }
 
