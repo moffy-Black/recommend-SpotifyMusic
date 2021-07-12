@@ -96,7 +96,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         assert(cgImage.colorSpace?.model == .rgb)
         
-        var imgDataArray = Matft.arange(start: 0, to: 0, by: 0, shape: [cgImage.height,cgImage.width])
+        let imgDataArray = Matft.nums(0, shape: [cgImage.height, cgImage.width])
         
         let bytesPerPixel = cgImage.bitsPerPixel / cgImage.bitsPerComponent
         for y in 0 ..< cgImage.height {
@@ -122,10 +122,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         guard let img = photoPreview.image else {return}
         
-//        let (imgDataArray,h,w) = getPixels(image: img)
-//        print(imgDataArray)
-//        print(h)
-//        print(w)
+        let (imgDataArray,h,w) = getPixels(image: img)
+        print(imgDataArray)
+        print(h)
+        print(w)
         grayImg = img
         
         let averageColor = UIColor(averageColorFrom: img)
