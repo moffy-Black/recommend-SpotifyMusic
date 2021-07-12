@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		818DBAF5F90E5D0D979B917E /* Pods_Moffy_music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A3843929DD245D38C82A85 /* Pods_Moffy_music.framework */; };
+		A6D6A7172C8EA7942A4CCACF /* Pods_Moffy_music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E6185723DA4DA4A9C4EFE4 /* Pods_Moffy_music.framework */; };
 		E7204DE12699875D003A4562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204DE02699875D003A4562 /* AppDelegate.swift */; };
 		E7204DE32699875D003A4562 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204DE22699875D003A4562 /* SceneDelegate.swift */; };
 		E7204DE52699875D003A4562 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204DE42699875D003A4562 /* ViewController.swift */; };
@@ -15,13 +15,12 @@
 		E7204DEA2699875E003A4562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7204DE92699875E003A4562 /* Assets.xcassets */; };
 		E7204DED2699875E003A4562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7204DEB2699875E003A4562 /* LaunchScreen.storyboard */; };
 		E7204DF7269997BF003A4562 /* PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */; };
-		E7204DFB26999CB0003A4562 /* OpenCV2.mm in Sources */ = {isa = PBXBuildFile; fileRef = E7204DFA26999CB0003A4562 /* OpenCV2.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D297C8E2331449797CE20A9 /* Pods-Moffy music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.debug.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.debug.xcconfig"; sourceTree = "<group>"; };
-		B9A3843929DD245D38C82A85 /* Pods_Moffy_music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moffy_music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7946214089E65FD052EA2C7 /* Pods-Moffy music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.release.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.release.xcconfig"; sourceTree = "<group>"; };
+		49E6185723DA4DA4A9C4EFE4 /* Pods_Moffy_music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moffy_music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B84D0830BF68CF8AA1D6948 /* Pods-Moffy music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.debug.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.debug.xcconfig"; sourceTree = "<group>"; };
+		E6FB1420241473F289C1DC68 /* Pods-Moffy music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.release.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.release.xcconfig"; sourceTree = "<group>"; };
 		E7204DDD2699875D003A4562 /* Moffy music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moffy music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7204DE02699875D003A4562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7204DE22699875D003A4562 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,9 +30,6 @@
 		E7204DEC2699875E003A4562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7204DEE2699875E003A4562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewController.swift; sourceTree = "<group>"; };
-		E7204DF826999CB0003A4562 /* Moffy music-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moffy music-Bridging-Header.h"; sourceTree = "<group>"; };
-		E7204DF926999CB0003A4562 /* OpenCV2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCV2.h; sourceTree = "<group>"; };
-		E7204DFA26999CB0003A4562 /* OpenCV2.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCV2.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				818DBAF5F90E5D0D979B917E /* Pods_Moffy_music.framework in Frameworks */,
+				A6D6A7172C8EA7942A4CCACF /* Pods_Moffy_music.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,16 +47,16 @@
 		1BC5C60B271CE4C7F6490ED0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D297C8E2331449797CE20A9 /* Pods-Moffy music.debug.xcconfig */,
-				C7946214089E65FD052EA2C7 /* Pods-Moffy music.release.xcconfig */,
+				4B84D0830BF68CF8AA1D6948 /* Pods-Moffy music.debug.xcconfig */,
+				E6FB1420241473F289C1DC68 /* Pods-Moffy music.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BEBF3477DADDD4FC513A4BE1 /* Frameworks */ = {
+		2F3F6829EF0E5A9118795BDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B9A3843929DD245D38C82A85 /* Pods_Moffy_music.framework */,
+				49E6185723DA4DA4A9C4EFE4 /* Pods_Moffy_music.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -71,7 +67,7 @@
 				E7204DDF2699875D003A4562 /* Moffy music */,
 				E7204DDE2699875D003A4562 /* Products */,
 				1BC5C60B271CE4C7F6490ED0 /* Pods */,
-				BEBF3477DADDD4FC513A4BE1 /* Frameworks */,
+				2F3F6829EF0E5A9118795BDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,14 +85,11 @@
 				E7204DE02699875D003A4562 /* AppDelegate.swift */,
 				E7204DE22699875D003A4562 /* SceneDelegate.swift */,
 				E7204DE42699875D003A4562 /* ViewController.swift */,
-				E7204DF926999CB0003A4562 /* OpenCV2.h */,
-				E7204DFA26999CB0003A4562 /* OpenCV2.mm */,
 				E7204DE62699875D003A4562 /* Main.storyboard */,
 				E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */,
 				E7204DE92699875E003A4562 /* Assets.xcassets */,
 				E7204DEB2699875E003A4562 /* LaunchScreen.storyboard */,
 				E7204DEE2699875E003A4562 /* Info.plist */,
-				E7204DF826999CB0003A4562 /* Moffy music-Bridging-Header.h */,
 			);
 			path = "Moffy music";
 			sourceTree = "<group>";
@@ -108,11 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7204DF12699875E003A4562 /* Build configuration list for PBXNativeTarget "Moffy music" */;
 			buildPhases = (
-				361D348E717D6A25E3B967E5 /* [CP] Check Pods Manifest.lock */,
+				EB3F7C274AF4BF9F9FCB9539 /* [CP] Check Pods Manifest.lock */,
 				E7204DD92699875D003A4562 /* Sources */,
 				E7204DDA2699875D003A4562 /* Frameworks */,
 				E7204DDB2699875D003A4562 /* Resources */,
-				AFAA1059677222AF81C1EF9E /* [CP] Embed Pods Frameworks */,
+				48290CC9E177F31FA25B2DEE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,7 +163,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		361D348E717D6A25E3B967E5 /* [CP] Check Pods Manifest.lock */ = {
+		48290CC9E177F31FA25B2DEE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB3F7C274AF4BF9F9FCB9539 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -192,23 +202,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AFAA1059677222AF81C1EF9E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -216,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7204DFB26999CB0003A4562 /* OpenCV2.mm in Sources */,
 				E7204DE52699875D003A4562 /* ViewController.swift in Sources */,
 				E7204DE12699875D003A4562 /* AppDelegate.swift in Sources */,
 				E7204DE32699875D003A4562 /* SceneDelegate.swift in Sources */,
@@ -364,7 +356,7 @@
 		};
 		E7204DF22699875E003A4562 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D297C8E2331449797CE20A9 /* Pods-Moffy music.debug.xcconfig */;
+			baseConfigurationReference = 4B84D0830BF68CF8AA1D6948 /* Pods-Moffy music.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,7 +370,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy music-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,7 +379,7 @@
 		};
 		E7204DF32699875E003A4562 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7946214089E65FD052EA2C7 /* Pods-Moffy music.release.xcconfig */;
+			baseConfigurationReference = E6FB1420241473F289C1DC68 /* Pods-Moffy music.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -401,7 +393,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy music-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

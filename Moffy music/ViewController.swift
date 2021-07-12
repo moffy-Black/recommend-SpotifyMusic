@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 import ChameleonFramework
-import Foundation
+import Matft
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -23,9 +23,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var bri : CGFloat = 0.1
     var alp : CGFloat = 0.1
     
+    // exchange to gray values
+    let redCoefficient: Float = 0.2126
+    let greenCoefficient: Float = 0.7152
+    let blueCoefficient: Float = 0.0722
+    
+    // camera & photo library function's values
     var imagePickerController = UIImagePickerController()
     var averageColor: UIColor!
     var grayImg: UIImage!
+    
+    // coarseness values
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,23 +88,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func getPixels(image: UIImage) {
+    func getPixels(image: UIImage) -> (imgDataArray:MfArray,h:Int,w:Int) {
         guard let cgImage = image.cgImage,
             let data = cgImage.dataProvider?.data,
             let bytes = CFDataGetBytePtr(data) else {
             fatalError("Couldn't access image data")
         }
         assert(cgImage.colorSpace?.model == .rgb)
-
+        
+        var imgDataArray = Matft.arange(start: 0, to: 0, by: 0, shape: [cgImage.height,cgImage.width])
+        
         let bytesPerPixel = cgImage.bitsPerPixel / cgImage.bitsPerComponent
         for y in 0 ..< cgImage.height {
             for x in 0 ..< cgImage.width {
                 let offset = (y * cgImage.bytesPerRow) + (x * bytesPerPixel)
-                let components = (r: bytes[offset], g: bytes[offset + 1], b: bytes[offset + 2])
-//                print("[x:\(x), y:\(y)] \(components)")
+                let r = bytes[offset]
+                let g = bytes[offset + 1]
+                let b = bytes[offset + 2]
+                let grayLevel = (Float(r) * redCoefficient) + (Float(g) * greenCoefficient) + (Float(b) * blueCoefficient)
+                imgDataArray[y][x] = grayLevel
             }
-//            print("---")
         }
+        return (imgDataArray, cgImage.height, cgImage.width)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -109,9 +122,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         guard let img = photoPreview.image else {return}
         
-        getPixels(image: img)
-        
-        grayImg = OpenCV2.rgb2gray(img)
+//        let (imgDataArray,h,w) = getPixels(image: img)
+//        print(imgDataArray)
+//        print(h)
+//        print(w)
+        grayImg = img
         
         let averageColor = UIColor(averageColorFrom: img)
         averageColor.getHue(&hue, saturation: &sat, brightness: &bri, alpha: &alp)
