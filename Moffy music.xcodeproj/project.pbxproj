@@ -15,6 +15,7 @@
 		E7204DEA2699875E003A4562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7204DE92699875E003A4562 /* Assets.xcassets */; };
 		E7204DED2699875E003A4562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7204DEB2699875E003A4562 /* LaunchScreen.storyboard */; };
 		E7204DF7269997BF003A4562 /* PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */; };
+		E7D3C59C269C87D600531DD2 /* ListenMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3C59B269C87D600531DD2 /* ListenMusicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E7204DEC2699875E003A4562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7204DEE2699875E003A4562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewController.swift; sourceTree = "<group>"; };
+		E7D3C59B269C87D600531DD2 /* ListenMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenMusicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				E7204DE22699875D003A4562 /* SceneDelegate.swift */,
 				E7204DE42699875D003A4562 /* ViewController.swift */,
 				E7204DE62699875D003A4562 /* Main.storyboard */,
+				E7D3C59B269C87D600531DD2 /* ListenMusicViewController.swift */,
 				E7204DF6269997BF003A4562 /* PhotoEditViewController.swift */,
 				E7204DE92699875E003A4562 /* Assets.xcassets */,
 				E7204DEB2699875E003A4562 /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			files = (
 				E7204DE52699875D003A4562 /* ViewController.swift in Sources */,
 				E7204DE12699875D003A4562 /* AppDelegate.swift in Sources */,
+				E7D3C59C269C87D600531DD2 /* ListenMusicViewController.swift in Sources */,
 				E7204DE32699875D003A4562 /* SceneDelegate.swift in Sources */,
 				E7204DF7269997BF003A4562 /* PhotoEditViewController.swift in Sources */,
 			);

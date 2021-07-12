@@ -31,9 +31,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // camera & photo library function's values
     var imagePickerController = UIImagePickerController()
     var averageColor: UIColor!
-    var grayImg: UIImage!
     
-    // coarseness values
+    // Exif information
+    var latitude: Double!
+    var longitude: Double!
+    
+    // times
+    var shootingDate: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +50,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if segue.identifier == "photoEditViewController" {
             let nextView = segue.destination as! PhotoEditViewController
 //            nextView.hue = self.hue
-            let satString = sat.description
-            let briString = bri.description
-            nextView.sat = satString
-            nextView.bri = briString
-            nextView.gray2Img = grayImg
+            let arousal = (-0.31 * self.bri) + (0.6 * self.sat)
+            let valence = (0.69 * self.bri) + (0.22 * self.sat)
+            let arousalString = arousal.description
+            let valenceString = valence.description
+//            let latitudeString = self.latitude.description
+//            let longitudeString = self.longitude.description
+            
+            nextView.arousal = arousalString
+            nextView.valence = valenceString
+//            nextView.latitude = latitudeString
+//            nextView.longitude = longitudeString
+//            nextView.time = shootingDate
         }
     }
     
@@ -122,11 +133,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         guard let img = photoPreview.image else {return}
         
-        let (imgDataArray,h,w) = getPixels(image: img)
-        print(imgDataArray)
-        print(h)
-        print(w)
-        grayImg = img
         
         let averageColor = UIColor(averageColorFrom: img)
         averageColor.getHue(&hue, saturation: &sat, brightness: &bri, alpha: &alp)
