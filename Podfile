@@ -7,6 +7,6 @@ target 'Moffy music' do
 
   # Pods for Moffy music
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon.git', :branch => 'swift5'
-  pod 'OpenCV2'
+  pod 'Matft'
 
 end

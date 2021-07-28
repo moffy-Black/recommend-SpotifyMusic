@@ -8,21 +8,26 @@
 import UIKit
 
 class PhotoEditViewController: UIViewController {
-    var sat = ""
-    var bri = ""
-    var gray2Img: UIImage!
-    
-    @IBOutlet weak var satLabel: UILabel!
-    @IBOutlet weak var briLabel: UILabel!
-    @IBOutlet weak var grayImg: UIImageView!
-    
+    var arousal = ""
+    var valence = ""
+    var latitude = ""
+    var longitude = ""
+    var time = ""
 
+    @IBOutlet weak var arousalLabel: UILabel!
+    @IBOutlet weak var valenceLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        satLabel.text = self.sat
-        briLabel.text = self.bri
-        grayImg.image = self.gray2Img
+        arousalLabel.text = self.arousal
+        valenceLabel.text = self.valence
+        latitudeLabel.text = self.latitude
+        longitudeLabel.text = self.longitude
+        timeLabel.text = self.time
     }
     
 
