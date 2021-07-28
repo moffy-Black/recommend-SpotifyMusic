@@ -13,6 +13,7 @@
 		E7E0A65826B19CD300E52DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E0A65626B19CD300E52DAB /* Main.storyboard */; };
 		E7E0A65A26B19CD500E52DAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E0A65926B19CD500E52DAB /* Assets.xcassets */; };
 		E7E0A65D26B19CD500E52DAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E0A65B26B19CD500E52DAB /* LaunchScreen.storyboard */; };
+		E7E0A68B26B1AAB600E52DAB /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E0A68A26B1AAB600E52DAB /* SpotifyiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		E7E0A65926B19CD500E52DAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7E0A65C26B19CD500E52DAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7E0A65E26B19CD500E52DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7E0A68A26B1AAB600E52DAB /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		E7E0A68C26B1AC6C00E52DAB /* Moffy-music-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Moffy-music-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E0A68B26B1AAB600E52DAB /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +60,10 @@
 		E7E0A64F26B19CD300E52DAB /* Moffy music */ = {
 			isa = PBXGroup;
 			children = (
+				E7E0A68926B1AAB600E52DAB /* Frameworks */,
 				E7E0A65026B19CD300E52DAB /* AppDelegate.swift */,
 				E7E0A65226B19CD300E52DAB /* SceneDelegate.swift */,
+				E7E0A68C26B1AC6C00E52DAB /* Moffy-music-Bridging-Header.h */,
 				E7E0A65426B19CD300E52DAB /* ViewController.swift */,
 				E7E0A65626B19CD300E52DAB /* Main.storyboard */,
 				E7E0A65926B19CD500E52DAB /* Assets.xcassets */,
@@ -65,6 +71,14 @@
 				E7E0A65E26B19CD500E52DAB /* Info.plist */,
 			);
 			path = "Moffy music";
+			sourceTree = "<group>";
+		};
+		E7E0A68926B1AAB600E52DAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7E0A68A26B1AAB600E52DAB /* SpotifyiOS.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,13 +302,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84A763S5U4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Moffy\\ music/Frameworks",
+				);
 				INFOPLIST_FILE = "Moffy music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy-music-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,13 +327,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84A763S5U4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Moffy\\ music/Frameworks",
+				);
 				INFOPLIST_FILE = "Moffy music/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy-music-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
