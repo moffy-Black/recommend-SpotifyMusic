@@ -40,7 +40,7 @@
                                 </constraints>
                                 <state key="normal" image="camera.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="tappedCameraButton:" destination="xSk-9X-kW6" eventType="touchUpInside" id="yGd-aO-wXT"/>
+                                    <action selector="tappedCameraButton:" destination="xSk-9X-kW6" eventType="touchUpInside" id="LpD-q2-nsY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-8g-kLK">
@@ -51,7 +51,7 @@
                                 </constraints>
                                 <state key="normal" image="photo.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="tappedLibraryButton:" destination="xSk-9X-kW6" eventType="touchUpInside" id="cr8-w8-Nhe"/>
+                                    <action selector="tppedLibraryButton:" destination="xSk-9X-kW6" eventType="touchUpInside" id="zYW-J9-6zK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oel-ab-KjM">
@@ -86,9 +86,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Ks-gR-arf"/>
                     <connections>
-                        <outlet property="cameraButton" destination="eG2-uQ-VlD" id="Kak-Cp-238"/>
-                        <outlet property="photoLibraryButton" destination="Z3y-8g-kLK" id="4Vs-nO-rkq"/>
-                        <outlet property="photoPreview" destination="aH1-dL-DLC" id="UvZ-T6-9ZW"/>
+                        <outlet property="cameraButton" destination="eG2-uQ-VlD" id="mtp-qo-P6b"/>
+                        <outlet property="photoLibraryButton" destination="Z3y-8g-kLK" id="DEd-78-5L7"/>
+                        <outlet property="photoPreview" destination="aH1-dL-DLC" id="nAe-JF-vLy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQ3-TP-2F2" sceneMemberID="firstResponder"/>
@@ -213,11 +213,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="joy-pB-STK"/>
                     <connections>
-                        <outlet property="arousalLabel" destination="s9Q-5j-Dpq" id="Yji-2O-68G"/>
-                        <outlet property="latitudeLabel" destination="RBz-GF-zva" id="CyG-7E-1Wi"/>
-                        <outlet property="longitudeLabel" destination="AMx-AQ-UfA" id="foK-LY-HWA"/>
-                        <outlet property="timeLabel" destination="2iU-7O-o4Z" id="6MI-0f-qcj"/>
-                        <outlet property="valenceLabel" destination="y5l-lA-GDL" id="tFb-t1-LYs"/>
+                        <outlet property="arousalLabel" destination="s9Q-5j-Dpq" id="b0q-fk-SI6"/>
+                        <outlet property="latitudeLabel" destination="RBz-GF-zva" id="h2X-wc-KQB"/>
+                        <outlet property="longitudeLabel" destination="AMx-AQ-UfA" id="kn8-lF-0Yz"/>
+                        <outlet property="timeLabel" destination="2iU-7O-o4Z" id="x0S-94-s3V"/>
+                        <outlet property="valenceLabel" destination="y5l-lA-GDL" id="mOv-CB-8fq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTo-4c-skI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

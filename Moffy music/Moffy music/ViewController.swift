@@ -13,8 +13,8 @@ import Matft
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // UIView connected values
-    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var photoPreview: UIImageView!
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var photoLibraryButton: UIButton!
     
     // hsba values
@@ -65,6 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+
     @IBAction func tappedCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
@@ -72,8 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.delegate = self
         present(picker, animated: true)
     }
-    
-    @IBAction func tappedLibraryButton(_ sender: Any) {
+    @IBAction func tppedLibraryButton(_ sender: Any) {
         self.imagePickerController.sourceType = .photoLibrary
         self.present(self.imagePickerController, animated: true, completion: nil)
     }

@@ -93,12 +93,12 @@
 				E7E0A65226B19CD300E52DAB /* SceneDelegate.swift */,
 				E7E0A68C26B1AC6C00E52DAB /* Moffy-music-Bridging-Header.h */,
 				E7E0A65426B19CD300E52DAB /* ViewController.swift */,
+				E7E0A69526B2B58800E52DAB /* PhotoEditViewController.swift */,
+				E7E0A69B26B2BA0500E52DAB /* ListenMusicViewController.swift */,
 				E7E0A65626B19CD300E52DAB /* Main.storyboard */,
 				E7E0A65926B19CD500E52DAB /* Assets.xcassets */,
 				E7E0A65B26B19CD500E52DAB /* LaunchScreen.storyboard */,
 				E7E0A65E26B19CD500E52DAB /* Info.plist */,
-				E7E0A69526B2B58800E52DAB /* PhotoEditViewController.swift */,
-				E7E0A69B26B2BA0500E52DAB /* ListenMusicViewController.swift */,
 			);
 			path = "Moffy music";
 			sourceTree = "<group>";
@@ -388,7 +388,20 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-framework",
+					"\"ChameleonFramework\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Matft\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy-music-Bridging-Header.h";
@@ -414,7 +427,20 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-framework",
+					"\"ChameleonFramework\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Matft\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.moffy.apps.Moffy-music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Moffy music/Moffy-music-Bridging-Header.h";
