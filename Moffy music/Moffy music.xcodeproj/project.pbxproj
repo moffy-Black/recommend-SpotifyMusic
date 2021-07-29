@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00FABE7385D579DEE1AE5AFD /* Pods_Moffy_music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1837EE0694C5986DF6772F2F /* Pods_Moffy_music.framework */; };
 		E7E0A65126B19CD300E52DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0A65026B19CD300E52DAB /* AppDelegate.swift */; };
 		E7E0A65326B19CD300E52DAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0A65226B19CD300E52DAB /* SceneDelegate.swift */; };
 		E7E0A65526B19CD300E52DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0A65426B19CD300E52DAB /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1837EE0694C5986DF6772F2F /* Pods_Moffy_music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moffy_music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		722B24E6751FD27BDCE62056 /* Pods-Moffy music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.release.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.release.xcconfig"; sourceTree = "<group>"; };
+		E3494E23E9C0B10291144E80 /* Pods-Moffy music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.debug.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.debug.xcconfig"; sourceTree = "<group>"; };
 		E7E0A64D26B19CD300E52DAB /* Moffy music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moffy music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E0A65026B19CD300E52DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E0A65226B19CD300E52DAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +39,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E0A68B26B1AAB600E52DAB /* SpotifyiOS.framework in Frameworks */,
+				00FABE7385D579DEE1AE5AFD /* Pods_Moffy_music.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15929A037B38F665B249F291 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3494E23E9C0B10291144E80 /* Pods-Moffy music.debug.xcconfig */,
+				722B24E6751FD27BDCE62056 /* Pods-Moffy music.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3F23D74088D8115BD41C8F2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1837EE0694C5986DF6772F2F /* Pods_Moffy_music.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7E0A64426B19CD300E52DAB = {
 			isa = PBXGroup;
 			children = (
 				E7E0A64F26B19CD300E52DAB /* Moffy music */,
 				E7E0A64E26B19CD300E52DAB /* Products */,
+				15929A037B38F665B249F291 /* Pods */,
+				3F23D74088D8115BD41C8F2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7E0A66126B19CD500E52DAB /* Build configuration list for PBXNativeTarget "Moffy music" */;
 			buildPhases = (
+				DD688A088ACBD46A404E779C /* [CP] Check Pods Manifest.lock */,
 				E7E0A64926B19CD300E52DAB /* Sources */,
 				E7E0A64A26B19CD300E52DAB /* Frameworks */,
 				E7E0A64B26B19CD300E52DAB /* Resources */,
+				5B5F990B7345E3F34B0116F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B5F990B7345E3F34B0116F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moffy music/Pods-Moffy music-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD688A088ACBD46A404E779C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moffy music-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7E0A64926B19CD300E52DAB /* Sources */ = {
@@ -297,6 +366,7 @@
 		};
 		E7E0A66226B19CD500E52DAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3494E23E9C0B10291144E80 /* Pods-Moffy music.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +392,7 @@
 		};
 		E7E0A66326B19CD500E52DAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 722B24E6751FD27BDCE62056 /* Pods-Moffy music.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
