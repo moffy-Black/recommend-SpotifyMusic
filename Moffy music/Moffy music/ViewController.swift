@@ -39,6 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // times
     var shootingDate: String!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -54,14 +55,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let valence = (0.69 * self.bri) + (0.22 * self.sat)
             let arousalString = arousal.description
             let valenceString = valence.description
-//            let latitudeString = self.latitude.description
-//            let longitudeString = self.longitude.description
+            let latitudeString = self.latitude.description
+            let longitudeString = self.longitude.description
             
             nextView.arousal = arousalString
             nextView.valence = valenceString
-//            nextView.latitude = latitudeString
-//            nextView.longitude = longitudeString
-//            nextView.time = shootingDate
+            nextView.latitude = latitudeString
+            nextView.longitude = longitudeString
+            nextView.time = self.shootingDate
         }
     }
     
@@ -132,7 +133,46 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             photoPreview?.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         }
         guard let img = photoPreview.image else {return}
+
+        let assetUrl = info[UIImagePickerController.InfoKey.referenceURL] as! URL
+        // PHAsset = Photo Library上の画像、ビデオ、ライブフォト用の型
+        let result = PHAsset.fetchAssets(withALAssetURLs: [assetUrl], options: nil)
         
+        let asset = result.firstObject
+        
+        // コンテンツ編集セッションを開始するためのアセットの要求
+        asset?.requestContentEditingInput(with: nil, completionHandler: { contentEditingInput, info in
+            // contentEditingInput = 編集用のアセットに関する情報を提供するコンテナ
+            let url = contentEditingInput?.fullSizeImageURL
+            // 対象アセットのURLからCIImageを生成
+            let inputImage = CIImage(contentsOf: url!)!
+            
+            // CIImageのpropertiesから画像のメタデータを取得する
+            if inputImage.properties["{GPS}"] as? Dictionary<String,Any> == nil {
+                // GPS 情報の取得に失敗した時の処理
+                print("GPS Faild")
+            } else {
+                // GPS 情報の取得に成功した時の処理
+                let gps = inputImage.properties["{GPS}"] as? Dictionary<String,Any>
+                self.latitude = gps!["Latitude"] as? Double
+                let latitudeRef = gps!["LatitudeRef"] as! String
+                self.longitude = gps!["Longitude"] as? Double
+                let longitudeRef = gps!["LongitudeRef"] as! String
+                if latitudeRef == "S" {
+                    self.latitude = self.latitude * -1
+                }
+                if longitudeRef == "W" {
+                    self.longitude = self.longitude * -1
+                }
+                 
+            }
+            if inputImage.properties["{Exif}"] as? Dictionary<String,Any> == nil {
+                print("Exif Failed")
+            } else {
+                let exif = inputImage.properties["{Exif}"] as? Dictionary<String,Any>
+                self.shootingDate = exif!["DateTimeOriginal"] as? String
+            }
+        })
         
         let averageColor = UIColor(averageColorFrom: img)
         averageColor.getHue(&hue, saturation: &sat, brightness: &bri, alpha: &alp)
@@ -141,6 +181,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
 }
-
-
 
