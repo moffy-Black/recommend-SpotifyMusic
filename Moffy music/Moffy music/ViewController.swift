@@ -39,6 +39,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // times
     var shootingDate: String!
     
+    //tamura
+    var kmax:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +102,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func getPixels(image: UIImage) -> (imgDataArray:MfArray,h:Int,w:Int) {
+    func grayscale(image: UIImage) -> UIImage? {
+        let context = CIContext(options: nil)
+        if let filter = CIFilter(name: "CIPhotoEffectNoir") {
+            filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
+            if let output = filter.outputImage {
+                if let cgImage = context.createCGImage(output, from: output.extent) {
+                    return UIImage(cgImage: cgImage)
+                }
+            }
+        }
+        return nil
+    }
+    
+    func getPixels(image: UIImage) {
         guard let cgImage = image.cgImage,
             let data = cgImage.dataProvider?.data,
             let bytes = CFDataGetBytePtr(data) else {
@@ -117,11 +132,62 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let r = bytes[offset]
                 let g = bytes[offset + 1]
                 let b = bytes[offset + 2]
-                let grayLevel = (Float(r) * redCoefficient) + (Float(g) * greenCoefficient) + (Float(b) * blueCoefficient)
-                imgDataArray[y][x] = grayLevel
+                let grayLevel = round(Float(r) * redCoefficient) + (Float(g) * greenCoefficient) + (Float(b) * blueCoefficient)
+                imgDataArray[y,x] = MfArray([grayLevel])
+            }
+            print(y)
+        }
+        print("Done")
+//        return (imgDataArray, cgImage.height, cgImage.width)
+    }
+    
+    func calculateCoarseness(imgDataArray:MfArray,h:Int,w:Int) {
+        if (Int(pow(Double(2), Double(5))) < w) {
+            kmax = 5
+        } else {
+            kmax = Int(log(Float(w))/log(2.0))
+        }
+        if (Int(pow(Double(2), Double(5))) < h) {
+            kmax = 5
+        } else {
+            kmax = Int(log(Float(h))/log(2.0))
+        }
+        let averageGray = Matft.nums(0, shape: [kmax,w,h])
+        let horizon = Matft.nums(0, shape: [kmax,w,h])
+        let vertical = Matft.nums(0, shape: [kmax,w,h])
+        let Sbest = Matft.nums(0, shape: [w,h])
+       
+        for k in 0..<kmax {
+            let window = Int(pow(Double(2), Double(k)))
+            for wi in window..<(w-window) {
+                for hi in window..<(h-window) {
+                    averageGray[k][wi][hi] = Matft.stats.sum(imgDataArray[(wi-window)...(wi+window)][(hi-window)...(hi+window)])
+                }
+            }
+            for wi in window..<(w-window-1) {
+                for hi in window..<(h-window-1) {
+                    horizon[k][wi][hi] = averageGray[k][(wi+window)][hi] - averageGray[k][(wi-window)][hi]
+                    vertical[k][wi][hi] = averageGray[k][(wi)][hi+window] - averageGray[k][(wi)][hi-window]
+                }
+            }
+            let value = Float(1.0 / pow(2.0, 2.0*(Double(k)+1.0)))
+            let jou = Matft.nums(value, shape: [w,h])
+            horizon[k] = horizon[k] * jou
+            vertical[k] = vertical[k] * jou
+        }
+        
+        for wi in 0..<w {
+            for hi in 0..<h {
+                let hMax = Matft.stats.max(horizon[0~<5][wi][hi])
+                let hMaxIndex = Matft.stats.argmax(horizon[0~<5][wi][hi])
+                let vMax = Matft.stats.max(vertical[0~<5][wi][hi])
+                let vMaxIndex = Matft.stats.argmax(vertical[0~<5][wi][hi])
+                print(hMax)
+                print("------")
+                print(vMax)
             }
         }
-        return (imgDataArray, cgImage.height, cgImage.width)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -177,6 +243,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let averageColor = UIColor(averageColorFrom: img)
         averageColor.getHue(&hue, saturation: &sat, brightness: &bri, alpha: &alp)
         
+        getPixels(image: img)
+//        calculateCoarseness(imgDataArray: pixcelData.0, h: pixcelData.1, w: pixcelData.2)
         picker.dismiss(animated: true, completion: nil)
     }
 
