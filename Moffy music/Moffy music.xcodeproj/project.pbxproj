@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00FABE7385D579DEE1AE5AFD /* Pods_Moffy_music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1837EE0694C5986DF6772F2F /* Pods_Moffy_music.framework */; };
+		E750EE0926C02E9600F43C60 /* ConnectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750EE0826C02E9600F43C60 /* ConnectButton.swift */; };
 		E7E0A65126B19CD300E52DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0A65026B19CD300E52DAB /* AppDelegate.swift */; };
 		E7E0A65326B19CD300E52DAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0A65226B19CD300E52DAB /* SceneDelegate.swift */; };
 		E7E0A65526B19CD300E52DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0A65426B19CD300E52DAB /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		1837EE0694C5986DF6772F2F /* Pods_Moffy_music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moffy_music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		722B24E6751FD27BDCE62056 /* Pods-Moffy music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.release.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.release.xcconfig"; sourceTree = "<group>"; };
 		E3494E23E9C0B10291144E80 /* Pods-Moffy music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moffy music.debug.xcconfig"; path = "Target Support Files/Pods-Moffy music/Pods-Moffy music.debug.xcconfig"; sourceTree = "<group>"; };
+		E750EE0826C02E9600F43C60 /* ConnectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectButton.swift; sourceTree = "<group>"; };
 		E7E0A64D26B19CD300E52DAB /* Moffy music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moffy music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E0A65026B19CD300E52DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E0A65226B19CD300E52DAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				E7E0A65426B19CD300E52DAB /* ViewController.swift */,
 				E7E0A69526B2B58800E52DAB /* PhotoEditViewController.swift */,
 				E7E0A69B26B2BA0500E52DAB /* ListenMusicViewController.swift */,
+				E750EE0826C02E9600F43C60 /* ConnectButton.swift */,
 				E7E0A65626B19CD300E52DAB /* Main.storyboard */,
 				E7E0A65926B19CD500E52DAB /* Assets.xcassets */,
 				E7E0A65B26B19CD500E52DAB /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E750EE0926C02E9600F43C60 /* ConnectButton.swift in Sources */,
 				E7E0A65526B19CD300E52DAB /* ViewController.swift in Sources */,
 				E7E0A65126B19CD300E52DAB /* AppDelegate.swift in Sources */,
 				E7E0A69C26B2BA0500E52DAB /* ListenMusicViewController.swift in Sources */,

@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="890" y="117"/>
         </scene>
-        <!--L-->
+        <!--Listen Music View Controller-->
         <scene sceneID="MSG-5y-wb8">
             <objects>
-                <viewController id="bLP-ib-b4v" customClass="L" sceneMemberID="viewController">
+                <viewController id="bLP-ib-b4v" customClass="ListenMusicViewController" customModule="Moffy_music" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qjJ-wq-fDR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
