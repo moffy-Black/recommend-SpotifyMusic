@@ -16,7 +16,7 @@ class ListenMusicViewController: UIViewController, SPTSessionManagerDelegate, SP
         let configuration = SPTConfiguration(clientID: SpotifyClientID, redirectURL: SpotifyRedirectURI)
         // Set the playURI to a non-nil value so that Spotify plays music after authenticating and App Remote can connect
         // otherwise another app switch will be required
-        configuration.playURI = "spotify:album:1htHMnxonxmyHdKE2uDFMR"
+        configuration.playURI = "spotify:playlist:6DsLXXFcOoG4D3PGggY1LL"
 
         // Set these url's to your backend which contains the secret to exchange for an access token
         // You can use the provided ruby script spotify_token_swap.rb for testing purposes
