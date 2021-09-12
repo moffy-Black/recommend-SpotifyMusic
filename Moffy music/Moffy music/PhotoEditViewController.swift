@@ -22,6 +22,7 @@ class PhotoEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
         arousalLabel.text = self.arousal
         valenceLabel.text = self.valence
