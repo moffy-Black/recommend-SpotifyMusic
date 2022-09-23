@@ -7,7 +7,7 @@
 ### requirements
 
 ```
-$ cd ~/graduation-iOS
+$ cd ~/Moffy music
 $ pod install
 ```
 
